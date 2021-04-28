@@ -6,7 +6,7 @@
 #    By: canjugun <canjugun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/19 17:39:03 by canjugun          #+#    #+#              #
-#    Updated: 2021/04/21 14:40:29 by canjugun         ###   ########.fr        #
+#    Updated: 2021/04/28 11:21:14 by canjugun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY srcs/nginx/nginx.conf /etc/nginx/
 
-COPY srcs/nginx/server.conf /etc/nginx/sites-available/default
-COPY srcs/nginx/server.conf /etc/nginx/sites-available/default-ssl.conf
+COPY srcs/nginx/server.conf tmp
+COPY srcs/nginx/server_off.conf tmp
 
 RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-english.tar.gz && \
     tar -xzvf phpMyAdmin-5.1.0-english.tar.gz && \
